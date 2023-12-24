@@ -1,0 +1,20 @@
+<div class="fashion_section">
+   <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-item active">
+            <div class="container">
+               <h1 class="fashion_taital"> Ecommerce Space
+               </h1>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-9">
+         <app-cards #productsC [hidden]="orderFinished" (productAdded)="addProductToCart($event)"></app-cards>
+      </div>
+      <div class="col-md-3">
+         <app-panier [productAdded]="productAdded" (onOrderFinished)=finishOrder($event) #shoppingCartC
+            [hidden]="orderFinished"></app-panier>
+      </div>
+   </div>
